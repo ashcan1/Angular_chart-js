@@ -1,0 +1,15 @@
+Humidity: <input type="text" [(ngModel)]="humiditySensorReading">
+<br>
+Temperature: <input type="text" [(ngModel)]="temperatureSensorReading">
+<br>
+<button mat-raised-button color="primary" (click)="insertData()">insert</button>
+
+<mat-list *ngIf="currentSensorReadings | async as sensors">
+    <mat-list-item>Current Humidity: {{ sensors.humidity }}</mat-list-item>
+    <mat-list-item>Current Temperature: {{ sensors.temperature }}</mat-list-item>
+</mat-list>
+
+<div>
+    <canvas id="chartHumidity"></canvas>
+</div>
+
